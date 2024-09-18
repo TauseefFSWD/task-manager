@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTask, updateTask } from "../tasksSlice";
+import { deleteTask } from "../tasksSlice";
 import TaskForm from "./TaskForm";
 import "./TaskList.css";
 
@@ -29,6 +29,14 @@ const TaskList = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
+
+      {/* Conditionally render TaskForm */}
+      {currentTaskId && (
+        <TaskForm
+          currentTaskId={currentTaskId}
+          setCurrentTaskId={setCurrentTaskId}
+        />
+      )}
 
       <ul>
         {filteredTasks.length > 0 ? (

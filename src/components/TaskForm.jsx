@@ -36,7 +36,7 @@ const TaskForm = ({ currentTaskId, setCurrentTaskId }) => {
           updatedTask: { title, description, dueDate, priority, status },
         })
       );
-      setCurrentTaskId(null);
+      setCurrentTaskId(null); // Hide form after update
     } else {
       dispatch(
         addTask({
@@ -49,9 +49,12 @@ const TaskForm = ({ currentTaskId, setCurrentTaskId }) => {
         })
       );
     }
+    // Clear form fields
     setTitle("");
     setDescription("");
     setDueDate("");
+    setPriority("low");
+    setStatus("in-progress");
   };
 
   return (
@@ -62,23 +65,34 @@ const TaskForm = ({ currentTaskId, setCurrentTaskId }) => {
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        required
       />
       <textarea
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        required
       />
       <input
         type="date"
         value={dueDate}
         onChange={(e) => setDueDate(e.target.value)}
+        required
       />
-      <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+      <select
+        value={priority}
+        onChange={(e) => setPriority(e.target.value)}
+        required
+      >
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
-      <select value={status} onChange={(e) => setStatus(e.target.value)}>
+      <select
+        value={status}
+        onChange={(e) => setStatus(e.target.value)}
+        required
+      >
         <option value="in-progress">In Progress</option>
         <option value="completed">Completed</option>
       </select>
