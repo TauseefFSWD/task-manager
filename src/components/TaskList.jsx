@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTask, updateTask } from "../tasksSlice";
 import TaskForm from "./TaskForm";
-import "../styles.css";
 
 const TaskList = () => {
   const tasks = useSelector((state) => state.tasks);

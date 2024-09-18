@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTask, updateTask } from "../tasksSlice";
 import { nanoid } from "nanoid";
-import "../styles.css";
 
 const TaskForm = ({ currentTaskId, setCurrentTaskId }) => {
   const tasks = useSelector((state) => state.tasks);
