@@ -1,158 +1,118 @@
+/* TaskList.css */
 
-.task-list-container {
-    background-color: #f7fafc; 
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .task-list-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .task-list-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2d3748; 
-  }
-  
-  .search-bar {
-    padding: 0.5rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    width: 100%;
-    max-width: 33%;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  
-  .search-bar:focus {
-    border-color: #4299e1; 
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-    outline: none;
-  }
+.task-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
 
-  .task-list-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-  }
-  
-  @media (min-width: 640px) {
-    .task-list-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .task-list-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .task-list-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .task-item {
-    padding: 1rem;
-    border: 1px solid;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .task-item:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .task-item-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .task-item-desc {
-    font-size: 0.875rem;
-    color: #718096;
-    margin-bottom: 0.25rem;
-  }
-  
-  .task-item-due-date {
-    font-size: 0.75rem;
-    color: #a0aec0; 
-  }
-  
-  .task-item-priority {
-    font-size: 0.75rem;
-    margin-top: 0.5rem;
-  }
-  
-  .priority-high {
-    color: #e53e3e; 
-  }
-  
-  .priority-medium {
-    color: #d69e2e; 
-  }
-  
-  .priority-low {
-    color: #48bb78; 
-  }
-  
-  .task-item-status {
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
-  }
-  
-  .status-completed {
-    color: #48bb78; 
-  }
-  
-  .status-in-progress {
-    color: #ecc94b;
-  }
-  
-  /* Buttons styling */
-  .task-item-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-  }
-  
-  .task-item-btn {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.2s ease-in-out;
-    color: white;
-    font-size: 0.875rem;
-  }
-  
-  .btn-complete {
-    background-color: #4299e1; 
-  }
-  
-  .btn-complete:hover {
-    background-color: #3182ce;
-  }
-  
-  .btn-delete {
-    background-color: #f56565; 
-  }
-  
-  .btn-delete:hover {
-    background-color: #e53e3e;
-  }
-  
- 
-  .no-tasks {
-    text-align: center;
-    color: #718096; 
-    grid-column: span 4;
-  }
-  
+.header h2 {
+  margin: 0;
+}
+
+.header input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.task-form {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #f1f1f1;
+}
+
+.task-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.task-item p {
+  margin: 5px 0;
+}
+
+.priority,
+.status {
+  font-weight: bold;
+}
+
+.priority.low {
+  color: green;
+}
+
+.priority.medium {
+  color: orange;
+}
+
+.priority.high {
+  color: red;
+}
+
+.status.completed {
+  color: #28a745;
+}
+
+.status.pending {
+  color: #ffc107;
+}
+
+.status.overdue {
+  color: #dc3545;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}

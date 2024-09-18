@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTask, updateTask } from "../tasksSlice";
 import TaskForm from "./TaskForm";
+import "./TaskList.css";
 
 const TaskList = () => {
   const tasks = useSelector((state) => state.tasks);
@@ -28,11 +29,6 @@ const TaskList = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-
-      <TaskForm
-        currentTaskId={currentTaskId}
-        setCurrentTaskId={setCurrentTaskId}
-      />
 
       <ul>
         {filteredTasks.length > 0 ? (
